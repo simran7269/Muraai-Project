@@ -1,0 +1,66 @@
+<!-- 
+<h1> <img src="https://media-exp1.licdn.com/dms/image/C510BAQHJRGz9A4vq6A/company-logo_200_200/0/1519912579389?e=2147483647&v=beta&t=y7dOj2Zz8ccdcZFiUGF19RHQG3dnvhH_56IY9dtSano"
+    alt="" width="50px ">
+    Muraai Information Technology 
+
+<button mat_icon_button [matMenuTriggerFor]="menu" class="circle">{{fName|titlecase}}{{lName|titlecase}}</button>
+<mat-menu #menu="matMenu">
+    <mat-card class="ok">
+     <mat-card-header>
+        <mat-divider>   </mat-divider>
+            <mat-card-title>{{a|titlecase}}</mat-card-title>
+     </mat-card-header>
+     <mat-divider>   </mat-divider>
+     <mat-card-content>{{email}}</mat-card-content>
+    </mat-card>
+</mat-menu>
+    <button class=" add-btn" mat-button (click)="Order()">Add</button> -->
+    <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
+<!-- </h1> -->
+<!-- <br> -->
+    <!-- Child Component:{{uname}} -->
+    <div>
+      
+    <button mat_icon_button [matMenuTriggerFor]="menu" class="circle">{{fName|titlecase}}{{lName|titlecase}}</button>
+    <mat-menu #menu="matMenu">
+        <mat-card class="ok">
+         <mat-card-header>
+            <mat-divider>   </mat-divider>
+                <mat-card-title>{{a|titlecase}}</mat-card-title>
+         </mat-card-header>
+         <mat-divider>   </mat-divider>
+         <mat-card-content>{{email}}</mat-card-content>
+        </mat-card>
+    </mat-menu>
+
+
+   
+      <button class="icon"  (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+     <h1 appHiglight color="green" background="skyblue"  font-weight="bold" > Muraai Information Technologies
+       <button appHiglight font-weight="bold" color="red" class="add" mat-button (click)="Order()">Add</button>
+      <mat-form-field  class="sbar" >
+        <input matInput type="search" placeholder="Search Here" #search>
+      </mat-form-field>
+      <button appHiglight color="orange" background="black" class="search " (click)="onSearch(search.value)">Search</button></h1>
+      
+   
+
+    <mat-sidenav-container>
+      <mat-sidenav #snav mode="side">
+        <mat-nav-list >
+        <a appHiglight background="yellow" color="red" mat-list-item routerLink="/dashboard" (click)="snav.toggle()"> Orders</a>
+        <a appHiglight background="yellow" color="white" mat-list-item routerLink="/matcard" (click)="snav.toggle()">Go Shopping</a>
+        <a appHiglight background="yellow" color="white" mat-list-item routerLink="/wishlist" (click)="snav.toggle()">WishList</a>
+        <a appHiglight background="yellow" color="white" mat-list-item  (click) ="logout()">Logout</a>
+        </mat-nav-list>
+      </mat-sidenav>
+     
+      <mat-sidenav-content>
+        <router-outlet>  </router-outlet>
+      </mat-sidenav-content>
+    
+      
+    </mat-sidenav-container>
+ </div>

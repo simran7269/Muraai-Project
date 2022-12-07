@@ -1,0 +1,23 @@
+
+<!-- <app-details></app-details> -->
+<div class="i">
+<mat-card class="example-card" >
+    <mat-card-header>
+        
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Order Details</mat-card-title>
+      <mat-card-subtitle>Item Name</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <img mat-card-image src="https://pbs.twimg.com/media/CJOluKjUsAA5Qep.jpg" alt="">
+   
+  </mat-card>
+  <!-- <h3 class="text">Details: <br>Name:{{source.iname}}, <br>  Cost:{{source.cost}}, <br>Address:{{source.address}}, <br> Delivery Date:{{source.edelivery}}</h3> -->
+
+
+
+
+<app-details [idetails]="idetails" (updatedetails)="edit(idetails)"  (dltdetails)="delete($event)"></app-details>
+
+</div>
+  

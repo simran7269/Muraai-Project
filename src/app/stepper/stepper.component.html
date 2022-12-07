@@ -1,0 +1,132 @@
+<button mat-raised-button (click)="isEditable = !isEditable">
+    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button>
+
+<!-- <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your Personal Details</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Your Name</mat-label>
+                <input matInput formControlName="firstCtrl" placeholder="your name" required>
+            </mat-form-field>
+            <div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label> Age</mat-label>
+                    <input matInput type="number" formControlName="ageCtrl">
+                </mat-form-field>
+            </div>
+             <div> 
+                 <mat-form-field appearance="fill">
+            <mat-radio-group aria-label="Select Your Gender">
+                <mat-radio-button value="1">Male</mat-radio-button>
+                <mat-radio-button value="2">Feamle</mat-radio-button>
+                <mat-radio-button value="2">Others</mat-radio-button>
+              </mat-radio-group>
+            </mat-form-field>
+        </div> -->
+<!-- <div>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label> Phone Nummber</mat-label>
+                        <input matInput type="number" formControlName="ageCtrl">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+        </form>
+    </mat-step> -->
+
+<mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+        <form [formGroup]="firstFormGroup" (ngSubmit)="form1()" #formone="ngForm">
+            <ng-template matStepLabel>Fill out your Order Details</ng-template>
+            <div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label> S.No</mat-label>
+                    <input matInput type="number" formControlName="sno" required>
+                </mat-form-field>
+            </div>
+            <mat-form-field appearance="fill">
+                <mat-label> Item Name</mat-label>
+                <input matInput formControlName="iname" placeholder="your item name" required>
+            </mat-form-field>
+
+            <div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label> Cost</mat-label>
+                    <input matInput type="number" formControlName="cost" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+        <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formsecond="ngForm">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label> Shipping Address</mat-label>
+                <input matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label> Expected Delivery Date</mat-label>
+                    <input matInput  type="date" formControlName="edelivery" placeholder="Ex. 1 Main St, New York, NY" required>
+                </mat-form-field>
+            </div>
+           
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+        <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
+            <ng-template matStepLabel>Fill out Country/State</ng-template>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Country</mat-label>
+                <mat-select [formControl]="country" name="country">
+                    <mat-option *ngFor="let country of countries" [value]="country">
+                        {{country.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field> <br>
+            <mat-form-field appearance="fill">
+                <mat-label>State</mat-label>
+                <mat-select [formControl]="state" name="state">
+                    <mat-option *ngFor="let state of states" [value]="state">
+                        {{state.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field> <br>
+
+
+
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-stroked-button type="submit"
+                (click)="formone.ngSubmit.emit();formsecond.ngSubmit.emit();formthree.ngSubmit.emit()"> Submit</button>
+
+
+        </div>
+    </mat-step>
+</mat-stepper>

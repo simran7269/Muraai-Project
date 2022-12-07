@@ -1,0 +1,47 @@
+/* 
+button{
+    margin-left: 700px; */
+    /* margin-bottom: 500px; */
+    
+/* } */
+
+.circle{
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgb(10, 10, 10);
+
+    border-radius: 50%;
+    background-color: rgb(97, 125, 209);
+    margin-left: 100px;
+    float: right;
+    
+}
+.icon{
+    float: left;
+}
+
+.add{
+    float:right;
+    margin-top: 10px;
+}
+h1{
+    text-align: center;
+    background-color:darksalmon;
+    height: 50px;
+   
+}
+/* div{
+    margin-top: 10px;
+} */
+
+.search{
+    margin-left: 100px;
+    height: 40px;
+    width: 70px;
+   
+}
+.sbar{
+    width: 200px;
+    height: 70px;
+    margin-left: 200px;
+}

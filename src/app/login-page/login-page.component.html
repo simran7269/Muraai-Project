@@ -1,0 +1,44 @@
+<!-- <app-header></app-header> -->
+<!-- <mat-drawer-container class="example-container" >
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      
+      <button mat-raised-button (click) ="home()">
+      Home
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div> -->
+  
+  
+  
+<div class="all">
+
+    <form [formGroup]="formdata" (ngSubmit)="login(formdata.value)">
+<!-- <form > -->
+        <h1>LOGIN PAGE</h1>
+        <div >  
+          <mat-form-field appearance="fill">
+            <mat-label for="username" >Username </mat-label> <br>
+            <input matInput type="text" formControlName="email">
+            <!-- <input matInput value="Login Successful!"  #message > <br><br> -->
+          
+          </mat-form-field>
+        </div>
+
+        <div >
+          <mat-form-field appearance="fill">
+            <mat-label for="password">Password</mat-label> <br>
+            <input matInput type="password" formControlName="password">
+            <!-- <input matInput value="Login"  id="ps" type="password" #action > <br> <br> -->
+          </mat-form-field>
+        </div>
+        <!-- <button  mat-stroked-button (click)="openSnackBar( )" >Login</button> -->
+        <button  mat-stroked-button >Login</button>
+</form>
+
+</div>
+<!-- </mat-drawer-container> -->
