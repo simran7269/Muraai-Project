@@ -33,7 +33,9 @@ export class HeaderComponent implements OnInit{
 
   Order(){
       const dialogRef =this.dialog.open(StepperComponent);
-      dialogRef.afterClosed().subscribe(t=>(console.log(`output,${t}`)))
+      dialogRef.afterClosed().subscribe(t=>{
+        
+      })
     }
 
 
@@ -49,7 +51,6 @@ export class HeaderComponent implements OnInit{
 
 
  onSearch(value:any){
-  console.log('-----------',value)
   this.serv.searchItem(value);
 
  }

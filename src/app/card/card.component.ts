@@ -17,7 +17,7 @@ value: any;
 
   constructor(private route: ActivatedRoute,  private service: SampleserviceService, private router: Router, private dialog: MatDialog,) { }
   deleteRow(id: any) {
-    this.service.deleteOrder(id).subscribe(d => { console.log('---', d) });
+    this.service.deleteOrder(id).subscribe(d => { });
 
   }
   edit(value:any) {
@@ -27,7 +27,7 @@ value: any;
       }
 
       });
-      dialogRef.afterClosed().subscribe((t:any)=>{console.log('output',`${t}`)})
+      dialogRef.afterClosed().subscribe((t:any)=>{})
         
   
 
@@ -41,10 +41,10 @@ value: any;
   }
 
   ngOnInit() {
-    console.log('======',this.route.snapshot.params['id'])
+    
     this.service.getDetails(this.route.snapshot.params['id']).subscribe(x=>{
       this.idetails=x
-      console.log('---',x)
+      
     })
     
 

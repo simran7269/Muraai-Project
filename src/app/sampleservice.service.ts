@@ -21,14 +21,14 @@ export class SampleserviceService {
   }
   getshopping() {
      this.http.get(this.API_URL).subscribe(val=>{
-      console.log('---val-',val)
+      
       this.dataSubject$.next(val)
       this.data=val
     })
      
   }
   createOrder(data: any): Observable<any> {
-    console.log('-----data----', data);
+    
     return this.http.post(this.API_URL, data)
   }
   deleteOrder(id: any): Observable<any> {

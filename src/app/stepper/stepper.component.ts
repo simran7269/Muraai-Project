@@ -44,22 +44,21 @@ export class StepperComponent implements OnInit {
 
     this.country.valueChanges.subscribe((d: any) => {
       this.states = State.getStatesOfCountry(d.isoCode)
-      console.log('-----', d)
-      console.log('-----', this.states)
+     
 
     })
   }
 form1(){
-  console.log(this.firstFormGroup.value);
+  (this.firstFormGroup.value);
 }
 form2(){
-  console.log(this.secondFormGroup.value);
+  (this.secondFormGroup.value);
 }
 form3(){
-  console.log(this.thirdFormGroup.value);
+  (this.thirdFormGroup.value);
   this.serv.createOrder({...this.firstFormGroup.value,...this.secondFormGroup.value,...this.thirdFormGroup.value,id:this.firstFormGroup.value['sno']}).subscribe(d => {
   
-    console.log('-----', d)
+
 });
    
     }

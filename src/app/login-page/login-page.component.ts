@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
       email: new FormControl(this.data?.email ?? ''),
       password: new FormControl(this.data?.password ?? ''),
     });
-    console.log('---', this.data)
+    
   }
 
 
@@ -35,12 +35,9 @@ export class LoginPageComponent implements OnInit {
   
   login(data: any) {
     this.serv.login(data).subscribe(d => {
-      console.log('-----', d)
-
-   
+      
        localStorage.setItem('LoginSuccessful','true');
        localStorage.setItem('email',data.email);
-      //  console.log(localStorage.getItem('LoginSuccessful'))
      this.router.navigate(['/dashboard'])
     });
   }

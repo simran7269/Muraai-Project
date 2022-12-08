@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     'cost',
     'address',
     'edelivery',
-    'star',
+    'dot',
     'stars'
   ];
  
@@ -61,7 +61,9 @@ export class DashboardComponent implements OnInit {
  
     
   deleteRow(id: any) {
-    this.service.deleteOrder(id).subscribe(d => { console.log('---', d) });
+    this.service.deleteOrder(id).subscribe(d => { 
+      
+     });
 
   }
   editRow(source:any) {
@@ -85,7 +87,7 @@ export class DashboardComponent implements OnInit {
     star(data: any) {
       
       this.service.updateFavorites(data).subscribe((d: any) => {
-        console.log('-----', d)
+       
 
         window.location.reload();
       });

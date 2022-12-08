@@ -16,7 +16,7 @@ export class MatCardComponent implements OnInit{
   ngOnInit(): void {
   this.serv.getProductDetails().subscribe((data)=>{
     this.product=data
-    console.log(this.product)
+   
   })
  
   }

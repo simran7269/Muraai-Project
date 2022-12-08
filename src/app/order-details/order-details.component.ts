@@ -29,24 +29,25 @@ export class OrderDetailsComponent implements OnInit {
       
     
     });
-    console.log('---',this.data)
+    
   }
 
   submit(data: any) {
-    this.serv.createOrder({ ...data, id: data['sno'] }).subscribe(d => {
+    this.serv.createOrder({ ...data, id: data['sno'] }).subscribe(d=>{
+
+   
       // window.location.reload();
-      console.log('-----', d)
-    });
+
 
 
 
     this.dialog.closeAll();
-    console.log('---', data)
+     });
   }
   update(value: any){
      this.serv.editDetails(value).subscribe(a =>{
       // window.location.reload();
-      console.log('-----', a);
+      
      })
 
   }

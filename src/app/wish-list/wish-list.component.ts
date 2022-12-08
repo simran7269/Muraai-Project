@@ -17,7 +17,7 @@ export class WishListComponent {
     'cost',
     'address',
     'edelivery',
-    'star',
+    'dot',
     // 'stars'
   ];
   constructor(private service: SampleserviceService) { }
@@ -25,10 +25,12 @@ export class WishListComponent {
   
 
   ngOnInit(): void {
+    this.service.getshopping()
     this.dataSource = this.service.dataEvent$.pipe(map((n:any)=>{
-      console.log('-----',n)
+      
       return(n.filter((a:any)=>a.fav))
     }))
 }
 
 }
+ 
