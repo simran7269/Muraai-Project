@@ -1,13 +1,6 @@
-.all{
+.loginPage{
     text-align: center;
     
     margin-top:  50px;
 }
-.example-container{
-    height: fit-content;
-    justify-content: stretch;
-}
-.example-sidenav-content{
-    
-    height: fit-content;
-}
+

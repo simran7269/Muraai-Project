@@ -31,18 +31,13 @@ export class HeaderComponent implements OnInit{
     this.lName=((this.a.split(' ',2))[1])[0]
   }
 
-  Order(){
+  addOrder(){
       const dialogRef =this.dialog.open(StepperComponent);
-      dialogRef.afterClosed().subscribe(t=>{
-        
-      })
+      dialogRef.afterClosed().subscribe()
     }
 
 
-    card(){
-     
-  }
- 
+
   logout(){
     this.router.navigate(['']); 
     

@@ -33,22 +33,22 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   submit(data: any) {
-    this.serv.createOrder({ ...data, id: data['sno'] }).subscribe(d=>{
+    this.serv.createOrder({ ...data, id: data['sno'] }).subscribe()
+      // window.location.reload();
+      this.dialog.closeAll();
+  
+  }
 
    
-      // window.location.reload();
+      
 
 
 
-
-    this.dialog.closeAll();
-     });
-  }
   update(value: any){
-     this.serv.editDetails(value).subscribe(a =>{
+     this.serv.editDetails(value).subscribe()
       // window.location.reload();
       
-     })
+     
 
   }
   snackbar(){

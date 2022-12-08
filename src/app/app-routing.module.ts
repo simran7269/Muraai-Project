@@ -11,7 +11,15 @@ import { WishListComponent } from './wish-list/wish-list.component';
 
 const routes: Routes = [
   { path:'dashboard',
-component:DashboardComponent},
+component:DashboardComponent,
+
+// children:[
+//   { path:'wishlist',
+//   component:WishListComponent},
+//   { path:'matcard',
+//   component:MatCardComponent}
+// ]
+},
 
 { path:'card/:id',
 component:CardComponent},

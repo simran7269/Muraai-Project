@@ -34,12 +34,12 @@ export class LoginPageComponent implements OnInit {
 
   
   login(data: any) {
-    this.serv.login(data).subscribe(d => {
+    this.serv.login(data).subscribe() 
       
        localStorage.setItem('LoginSuccessful','true');
        localStorage.setItem('email',data.email);
      this.router.navigate(['/dashboard'])
-    });
+    
   }
 
 }

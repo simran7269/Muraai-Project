@@ -17,7 +17,7 @@ value: any;
 
   constructor(private route: ActivatedRoute,  private service: SampleserviceService, private router: Router, private dialog: MatDialog,) { }
   deleteRow(id: any) {
-    this.service.deleteOrder(id).subscribe(d => { });
+    this.service.deleteOrder(id).subscribe();
 
   }
   edit(value:any) {
@@ -27,15 +27,15 @@ value: any;
       }
 
       });
-      dialogRef.afterClosed().subscribe((t:any)=>{})
+      dialogRef.afterClosed().subscribe()
         
   
 
   }
   delete(id:any) {
       
-    this.service.deleteOrder(id).subscribe(d=>
-      {this.router.navigate(["dashboard"])});
+    this.service.deleteOrder(id).subscribe()
+      {this.router.navigate(["dashboard"])};
 
 
   }

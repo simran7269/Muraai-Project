@@ -17,7 +17,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <h1 appHiglight color="green" background="skyblue" font-weight="bold"> Muraai Information Technologies
-    <button appHiglight font-weight="bold" color="red" class="add" mat-button (click)="Order()">Add</button>
+    <button appHiglight font-weight="bold" color="red" class="add" mat-button (click)="addOrder()">Add</button>
     <mat-form-field class="sbar">
       <input matInput type="search" placeholder="Search Here" #search>
     </mat-form-field>
@@ -31,7 +31,23 @@
     <mat-sidenav #snav mode="side">
       <mat-nav-list>
         <a appHiglight background="yellow" mat-list-item routerLink="/dashboard" (click)="snav.toggle()"> Orders</a>
-        <a appHiglight background="yellow" mat-list-item routerLink="/matcard" (click)="snav.toggle()">Go Shopping</a>
+
+        <mat-accordion>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header appHiglight background="yellow">
+              <mat-panel-title >
+                Go Shopping
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <a appHiglight background="skyblue" mat-list-item routerLink="/matcard" (click)="snav.toggle()">Clothing</a>
+            <a appHiglight background="skyblue" mat-list-item routerLink="/matcard" (click)="snav.toggle()">Home
+              Appliances</a>
+            <a appHiglight background="skyblue" mat-list-item routerLink="/matcard" (click)="snav.toggle()">Electronic
+              Appliances</a>
+
+          </mat-expansion-panel>
+        </mat-accordion>
         <a appHiglight background="yellow" mat-list-item routerLink="/wishlist" (click)="snav.toggle()">WishList</a>
         <a appHiglight background="yellow" mat-list-item (click)="logout()">Logout</a>
       </mat-nav-list>

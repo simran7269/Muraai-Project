@@ -61,9 +61,7 @@ export class DashboardComponent implements OnInit {
  
     
   deleteRow(id: any) {
-    this.service.deleteOrder(id).subscribe(d => { 
-      
-     });
+    this.service.deleteOrder(id).subscribe();
 
   }
   editRow(source:any) {
@@ -79,18 +77,18 @@ export class DashboardComponent implements OnInit {
    
 
   }
-  xyz(id:any){
+  allRow(id:any){
       this.router.navigate(['card/',id])
     }
 
 
     star(data: any) {
       
-      this.service.updateFavorites(data).subscribe((d: any) => {
+      this.service.updateFavorites(data).subscribe()
        
 
         window.location.reload();
-      });
+      }
 
      
   // logout() {
@@ -103,4 +101,4 @@ export class DashboardComponent implements OnInit {
 //   }
     }
 
-}
+
