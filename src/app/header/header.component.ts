@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject, takeUntil } from 'rxjs';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
 import { SampleserviceService } from '../sampleservice.service';
 import { StepperComponent } from '../stepper/stepper.component';
@@ -11,9 +11,11 @@ import { StepperComponent } from '../stepper/stepper.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit,OnDestroy{
   // @Input()
   // uname:string | undefined ;
+  destroyed$ = new Subject<boolean>();
+
   a:any;
   fName:any;
   lName:any;
@@ -23,6 +25,7 @@ export class HeaderComponent implements OnInit{
   
 
   constructor(private dialog: MatDialog,private router:Router, private serv: SampleserviceService){}
+  
 
   ngOnInit() {
     this.email=localStorage.getItem('email')
@@ -33,7 +36,7 @@ export class HeaderComponent implements OnInit{
 
   addOrder(){
       const dialogRef =this.dialog.open(StepperComponent);
-      dialogRef.afterClosed().subscribe()
+      dialogRef.afterClosed().pipe(takeUntil(this.destroyed$)).subscribe()
     }
 
 
@@ -50,6 +53,10 @@ export class HeaderComponent implements OnInit{
 
  }
 
+ ngOnDestroy() {
+  this.destroyed$.next(true);
+  this.destroyed$.complete();
+  }
  
 
   // logout() {

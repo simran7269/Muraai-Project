@@ -73,11 +73,11 @@
       "fav": true
     }
   ],
-  "product": [
+  "clothing": [
     {
       "id": 1,
       "img": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71xi4pF6v9L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png",
-      "itemName": "",
+      "itemName": "T-SHIRT",
       "cost": 200,
       "size": "M/L",
       "title": "T-SHIRT"
@@ -85,7 +85,7 @@
     {
       "id": 2,
       "img": "https://th.bing.com/th/id/OIP.wTg1oUYfnpwCll876RVnOQHaHa?pid=ImgDet&w=500&h=500&rs=1",
-      "itemName": "",
+      "itemName": "SHIRT",
       "cost": 200,
       "size": "M/L",
       "title": "SHIRT"
@@ -93,7 +93,7 @@
     {
       "id": 3,
       "img": "https://5.imimg.com/data5/MN/VL/MY-67265641/women-sweatshirt-500x500.jpg",
-      "itemName": "",
+      "itemName": "SWEATSHIRT",
       "cost": 200,
       "size": "M/L",
       "title": "SWEATSHIRT"
@@ -101,7 +101,7 @@
     {
       "id": 4,
       "img": "https://5.imimg.com/data5/TC/GJ/MY-24747469/faded-denim-jeans-500x500.jpg",
-      "itemName": "",
+      "itemName": "JEANS",
       "cost": 200,
       "size": "M/L",
       "title": "JEANS"
@@ -109,7 +109,7 @@
     {
       "id": 5,
       "img": "https://m.media-amazon.com/images/I/A1Ed3cIUNqL._SR500,500_.jpg",
-      "itemName": "",
+      "itemName": "DENIM SHIRT",
       "cost": 200,
       "size": "M/L",
       "title": "DENIM SHIRT"
@@ -117,10 +117,67 @@
     {
       "id": 6,
       "img": "https://5.imimg.com/data5/NI/AJ/MY-47671146/women-sweaters-500x500.jpg",
-      "itemName": "",
+      "itemName": "SWEATER",
       "cost": 200,
       "size": "M/L",
       "title": "SWEATER"
     }
-  ]
+  ],
+  "product":[
+    {
+      
+    }
+  ],
+  "homeAppliances":[{
+    
+      "id": 1,
+      "img": "https://th.bing.com/th/id/OIP.j_8h5OmpO4JNSaKouR4uCgHaHa?pid=ImgDet&rs=1",
+      "cost": 200,
+      "itemName": "Washing Machine",
+      "title": "First"
+    },
+    {
+      "id": 2,
+      "img": "https://assets.products-live.ao.com/Images/6693f52d-76b4-4e74-ade6-201610f105b2/1280x1280/NM111064WCAUKN_WH_hotpoint_washingmachine_06.jpg",
+      "itemName": "Washing Machine",
+      "cost": 200,
+      
+      "title": "Second"
+    },
+    {
+      "id": 3,
+      "img": "https://s.yimg.com/aah/usappliance/krff707ess-kitchenaid-26-8-cu-ft-36-width-standard-depth-french-door-refrigerator-with-exterior-ice-water-stainless-steel-6.jpg",
+      "itemName": "Refrigerator",
+      "cost": 200,
+      
+      "title": "Third"
+    }
+  ],
+  "electronicAppliances":[{
+    "id": 1,
+    "img": "https://media.glamour.com/photos/570433375eea738a350eaa4a/master/w_1600%2Cc_limit/home-2016-01-1-best-laptop-accessories-0125-courtesy-main.jpg",
+    "cost": 200,
+    "itemName": "Laptop",
+    "title": "First"
+
+
+  },
+  {
+    "id": 2,
+    "img": "https://th.bing.com/th/id/OIP.f_Dhgwcf7cRmzIgaymRsRQHaE8?pid=ImgDet&rs=1",
+    "cost": 200,
+    "itemName": "MacBook",
+    "title": "Second"
+
+  },
+  {
+    "id": 3,
+    "img": "https://media.glamour.com/photos/570433375eea738a350eaa4a/master/w_1600%2Cc_limit/home-2016-01-1-best-laptop-accessories-0125-courtesy-main.jpg",
+    "cost": 200,
+    "itemName": "Laptop",
+    "title": "Third"
+
+  }
+]
+
 }

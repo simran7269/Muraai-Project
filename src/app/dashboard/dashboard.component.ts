@@ -84,10 +84,13 @@ export class DashboardComponent implements OnInit {
 
     star(data: any) {
       
-      this.service.updateFavorites(data).subscribe()
+      this.service.updateFavorites(data).subscribe(()=>{
+
+      
        
 
         window.location.reload();
+      });
       }
 
      
