@@ -40,24 +40,15 @@ export class CardComponent implements OnInit, OnDestroy {
     this.service.deleteOrder(id).pipe(takeUntil(this.destroyedValues$)).subscribe(() => {
 
 
-<<<<<<< Updated upstream
-       this.router.navigate(["dashboard"]) ;
-=======
       { this.router.navigate(["dashboard"]) };
->>>>>>> Stashed changes
 
     });
   }
 
   ngOnInit() {
 
-<<<<<<< Updated upstream
     this.service.getDetails(this.route.snapshot.params['id']).pipe(takeUntil(this.destroyedValues$)).subscribe(value => {
       this.idetails = value
-=======
-    this.service.getDetails(this.route.snapshot.params['id']).pipe(takeUntil(this.destroyedValues$)).subscribe(x => {
-      this.idetails = x
->>>>>>> Stashed changes
 
     })
 
