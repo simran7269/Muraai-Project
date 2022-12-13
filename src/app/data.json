@@ -1,75 +1,75 @@
 {
   "shopping": [
     {
-      "sno": 3,
+      "sno": "3",
       "iname": "t-shirt",
-      "cost": 10,
+      "cost": "10",
       "address": "sss",
       "edelivery": "2022-12-12",
-      "id": 3,
-      "fav": true
+      "id": "3",
+      "fav": false
     },
     {
-      "sno": 4,
+      "sno": "4",
       "iname": "frock",
-      "cost": 123,
+      "cost": "123",
       "address": "sss",
       "edelivery": "2023-02-11",
-      "id": 4,
+      "id": "4",
       "fav": false
     },
     {
-      "sno": 5,
+      "sno": "5",
       "iname": "any",
-      "cost": 111,
+      "cost": "111",
       "address": "zzzz",
       "edelivery": "2022-02-01",
-      "id": 5,
+      "id": "5",
       "fav": false
     },
     {
-      "sno": 12,
+      "sno": "12",
       "iname": "pppppp",
-      "cost": 2222,
+      "cost": "2222",
       "address": "zzzzz",
       "edelivery": "22-12-22",
       "id": "12",
       "fav": true
     },
     {
-      "sno": 11,
+      "sno": "11",
       "iname": "top",
-      "cost": 200,
+      "cost": "200",
       "address": "hsr",
       "edelivery": "1-12-2022",
       "id": 11,
       "fav": false
     },
     {
-      "sno": 7,
+      "sno": "7",
       "iname": "shirt",
-      "cost": 100,
+      "cost": "100",
       "address": "btm",
       "edelivery": "2022-12-01",
-      "id": 7,
+      "id": "7",
       "fav": true
     },
     {
-      "sno": 1,
+      "sno": "1",
       "iname": "jeans",
-      "cost": 222,
+      "cost": "222",
       "address": "hsr",
       "edelivery": "2022-12-02",
-      "id": 1,
+      "id": "1",
       "fav": false
     },
     {
-      "sno": 10,
+      "sno": "10",
       "iname": "t-shirt",
-      "cost": 400,
+      "cost": "400",
       "address": "btm",
       "edelivery": "2022-12-12",
-      "id": 10,
+      "id": "10",
       "fav": true
     }
   ],
@@ -77,10 +77,11 @@
     {
       "id": 1,
       "img": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71xi4pF6v9L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png",
-      "itemName": "T-SHIRT",
+      "itemName": "T-Shirt",
       "cost": 200,
       "size": "M/L",
-      "title": "T-SHIRT"
+      "title": "T-SHIRT",
+      "details":"Good Fabric t-shirt"
     },
     {
       "id": 2,
@@ -88,7 +89,8 @@
       "itemName": "SHIRT",
       "cost": 200,
       "size": "M/L",
-      "title": "SHIRT"
+      "title": "SHIRT",
+      "details":"Good Fabric Shirt For Men"
     },
     {
       "id": 3,
@@ -96,7 +98,8 @@
       "itemName": "SWEATSHIRT",
       "cost": 200,
       "size": "M/L",
-      "title": "SWEATSHIRT"
+      "title": "SWEATSHIRT",
+      "details":"Smooth Material"
     },
     {
       "id": 4,
@@ -104,7 +107,8 @@
       "itemName": "JEANS",
       "cost": 200,
       "size": "M/L",
-      "title": "JEANS"
+      "title": "JEANS",
+      "details":"Good Material"
     },
     {
       "id": 5,
@@ -112,7 +116,8 @@
       "itemName": "DENIM SHIRT",
       "cost": 200,
       "size": "M/L",
-      "title": "DENIM SHIRT"
+      "title": "DENIM SHIRT",
+      "details":"Good Quality"
     },
     {
       "id": 6,
@@ -120,14 +125,11 @@
       "itemName": "SWEATER",
       "cost": 200,
       "size": "M/L",
-      "title": "SWEATER"
+      "title": "SWEATER",
+      "details":"Good Fabric"
     }
   ],
-  "product":[
-    {
-      
-    }
-  ],
+
   "homeAppliances":[{
     
       "id": 1,

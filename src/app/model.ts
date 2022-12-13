@@ -7,7 +7,7 @@ export interface shopping{
     id: string,
     fav: boolean
 }
-export interface product{
+export interface cards{
     id: number,
       img:string ,
       itemName: string,
