@@ -27,7 +27,6 @@ export class DashboardComponent implements OnInit {
    
 
 
-  // username:string="Simran";
 
   displayedColumns = [
     'sno',
@@ -54,11 +53,7 @@ export class DashboardComponent implements OnInit {
   
   }
 
-  // edit(id:any) {
-  //   this.service.createOrder({}).subscribe(f => { console.log('---', f) });
-  //   this.dialog.open(OrderDetailsComponent)
-  // }
- 
+
     
   deleteRow(id: any) {
     this.service.deleteOrder(id).subscribe();
@@ -72,9 +67,7 @@ export class DashboardComponent implements OnInit {
 
       })
         
-    // dialogRef.afterClosed().subscribe((result: any) => {
-    //   console.log(`Dialog result:${result}`);
-   
+ 
 
   }
   allRow(id:any){
@@ -93,15 +86,7 @@ export class DashboardComponent implements OnInit {
       });
       }
 
-     
-  // logout() {
-  //      localStorage.setItem('LogOutSuccessful','false');
-  //    this.router.navigate([''])
-  // }
-//  logout(){
-//     this.router.navigate(['']); 
-//     localStorage.clear();
-//   }
+  
     }
 
 
