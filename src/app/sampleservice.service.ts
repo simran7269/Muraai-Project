@@ -12,6 +12,9 @@ export class SampleserviceService {
  
   API_URL = 'http://localhost:3000/shopping';
   productUrl = 'http://localhost:3000/product';
+  homeAUrl='http://localhost:3000/homeAppliances';
+  elecAUrl='http://localhost:3000/electronicAppliances';
+  clothURL='http://localhost:3000/clothing';
 
   private dataSubject$: Subject<Object>=new Subject();
   dataEvent$= this.dataSubject$.asObservable();
@@ -64,5 +67,17 @@ export class SampleserviceService {
 this.dataSubject$.next(
   this. data.filter((val:any)=>val.iname.toLowerCase().includes(value.toLowerCase()))
 )
+  }
+
+  getclothing(){
+    return this.http.get(this.clothURL)
+  }
+
+  gethomeAppliance(){
+    return this.http.get(this.homeAUrl)
+  }
+
+  getelectronicAppliance(){
+    return this.http.get(this.elecAUrl)
   }
 }

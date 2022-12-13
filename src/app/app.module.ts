@@ -47,6 +47,7 @@ import { MatCardComponent } from './mat-card/mat-card.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { HiglightDirective } from './higlight.directive';
 import { ButtonDirDirective } from './button-dir.directive';
+import { DummyComponent } from './dummy/dummy.component';
 
 
 
@@ -65,6 +66,7 @@ import { ButtonDirDirective } from './button-dir.directive';
     WishListComponent,
     HiglightDirective,
     ButtonDirDirective,
+    DummyComponent,
   
    
     
