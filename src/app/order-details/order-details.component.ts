@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, Validators, RequiredValidator } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SampleserviceService } from '../sampleservice.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-order-details',
@@ -11,9 +12,11 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./order-details.component.css']
 })
 
-export class OrderDetailsComponent implements OnInit {
+export class OrderDetailsComponent implements OnInit,OnDestroy {
   showit=true
   formdata: any;
+
+  destroyedData$ = new Subject<boolean>();
 
   constructor(public dialog: MatDialog, private serv: SampleserviceService, @Inject(MAT_DIALOG_DATA) public data: any, private _snackBar: MatSnackBar) { }
 
@@ -33,22 +36,24 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   submit(data: any) {
-    this.serv.createOrder({ ...data, id: data['sno'] }).subscribe(d=>{
+    this.serv.createOrder({ ...data, id: data['sno'] }).pipe(takeUntil(this.destroyedData$)).subscribe(()=>{
 
    
       // window.location.reload();
-
-
-
-
-    this.dialog.closeAll();
-     });
+      this.dialog.closeAll();
+   });
   }
+
+   
+      
+
+
+
   update(value: any){
-     this.serv.editDetails(value).subscribe(a =>{
+     this.serv.editDetails(value).pipe(takeUntil(this.destroyedData$)).subscribe()
       // window.location.reload();
       
-     })
+     
 
   }
   snackbar(){
@@ -57,4 +62,9 @@ export class OrderDetailsComponent implements OnInit {
   snackbar1(){
     this._snackBar.open('Added Successfully', 'Thankyou');
   }
+
+  ngOnDestroy() {
+    this.destroyedData$.next(true);
+    this.destroyedData$.complete();
+    }
 }

@@ -1,15 +1,18 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup, } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SampleserviceService } from '../sampleservice.service';
 import { Country, State, City } from 'country-state-city';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.css']
 })
-export class StepperComponent implements OnInit {
+export class StepperComponent implements OnInit,OnDestroy {
+
+  destroyedvalue$ = new Subject<boolean>();
 
   formdata: any
   showit = true
@@ -42,8 +45,8 @@ export class StepperComponent implements OnInit {
       state: this.state
     })
 
-    this.country.valueChanges.subscribe((d: any) => {
-      this.states = State.getStatesOfCountry(d.isoCode)
+    this.country.valueChanges.pipe(takeUntil(this.destroyedvalue$)).subscribe((details: any) => {
+      this.states = State.getStatesOfCountry(details.isoCode)
      
 
     })
@@ -56,13 +59,16 @@ form2(){
 }
 form3(){
   (this.thirdFormGroup.value);
-  this.serv.createOrder({...this.firstFormGroup.value,...this.secondFormGroup.value,...this.thirdFormGroup.value,id:this.firstFormGroup.value['sno']}).subscribe(d => {
+  this.serv.createOrder({...this.firstFormGroup.value,...this.secondFormGroup.value,...this.thirdFormGroup.value,id:this.firstFormGroup.value['sno']}).pipe(takeUntil(this.destroyedvalue$)).subscribe()
   
 
-});
+
    
     }
   
-
+    ngOnDestroy() {
+      this.destroyedvalue$.next(true);
+      this.destroyedvalue$.complete();
+      }
 
   }

@@ -1,4 +1,4 @@
-.example-card {
+.imagecard {
     max-width: 370px;
     max-width: 330px;
     /* width: 50%; */
@@ -14,7 +14,7 @@
   .row {
     display:inline-flex;
     /* align-items: center; */
-    justify-content:space-around;
+    justify-content:space-between;
     flex-wrap: wrap;
     
     

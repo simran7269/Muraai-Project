@@ -27,7 +27,6 @@ export class DashboardComponent implements OnInit {
    
 
 
-  // username:string="Simran";
 
   displayedColumns = [
     'sno',
@@ -54,16 +53,10 @@ export class DashboardComponent implements OnInit {
   
   }
 
-  // edit(id:any) {
-  //   this.service.createOrder({}).subscribe(f => { console.log('---', f) });
-  //   this.dialog.open(OrderDetailsComponent)
-  // }
- 
+
     
   deleteRow(id: any) {
-    this.service.deleteOrder(id).subscribe(d => { 
-      
-     });
+    this.service.deleteOrder(id).subscribe();
 
   }
   editRow(source:any) {
@@ -74,33 +67,26 @@ export class DashboardComponent implements OnInit {
 
       })
         
-    // dialogRef.afterClosed().subscribe((result: any) => {
-    //   console.log(`Dialog result:${result}`);
-   
+ 
 
   }
-  xyz(id:any){
+  allRow(id:any){
       this.router.navigate(['card/',id])
     }
 
 
     star(data: any) {
       
-      this.service.updateFavorites(data).subscribe((d: any) => {
+      this.service.updateFavorites(data).subscribe(()=>{
+
+      
        
 
         window.location.reload();
       });
+      }
 
-     
-  // logout() {
-  //      localStorage.setItem('LogOutSuccessful','false');
-  //    this.router.navigate([''])
-  // }
-//  logout(){
-//     this.router.navigate(['']); 
-//     localStorage.clear();
-//   }
+  
     }
 
-}
+

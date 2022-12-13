@@ -27,6 +27,7 @@ import{MatInputModule}from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -87,6 +88,7 @@ import { ButtonDirDirective } from './button-dir.directive';
     MatSelectModule,
     MatPaginatorModule,
     MatRadioModule,
+    MatExpansionModule,
     
     HttpClientModule,
     MatDialogModule,
