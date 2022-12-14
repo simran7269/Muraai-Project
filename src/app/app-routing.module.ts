@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { CardComponent } from './card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DummyComponent } from './dummy/dummy.component';
+
 import { HeaderComponent } from './header/header.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MatCardComponent } from './mat-card/mat-card.component';
@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: '',
     component: LoginPageComponent
+  },
+  {
+    path: 'matcard',
+    component: MatCardComponent
   },
 
 

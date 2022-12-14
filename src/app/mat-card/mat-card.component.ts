@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { cards } from '../model';
 import { SampleserviceService } from '../sampleservice.service';
 
 @Component({
@@ -8,25 +9,16 @@ import { SampleserviceService } from '../sampleservice.service';
   styleUrls: ['./mat-card.component.css']
 })
 export class MatCardComponent implements OnInit{
- product:any
-
+ product: Observable<cards[]> = of([])
 
   constructor(private serv:SampleserviceService){}
+
+  
   
   ngOnInit(): void {
-  this.serv.getProductDetails().subscribe((data)=>{
-    this.product=data
-   
-  })
+  this.product = this.serv.getProductDetails()
  
   }
 
 
-
-
-
-
-
-// // ]
-//   }
 }

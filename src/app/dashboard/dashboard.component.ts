@@ -8,14 +8,8 @@ import { SampleserviceService } from '../sampleservice.service'
 import { MatDialog } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { shopping } from '../model';
 
-export interface PeriodicElement {
-  iname: string;
-  sno: number;
-  cost: number;
-  address: string;
-  edelivery: string,
-}
 
 @Component({
   selector: 'app-dashboard',
@@ -43,7 +37,16 @@ export class DashboardComponent implements OnInit {
 
 
   constructor(private service: SampleserviceService, private router: Router, private dialog: MatDialog,private route: ActivatedRoute) { }
-  dataSource: Observable<any> = of([{}])
+  dataSource: Observable<shopping[]> = of([{
+    sno: '',
+    iname: '',
+    cost: '',
+    address: '',
+    edelivery: '',
+    id: '',
+    fav: false
+
+  }])
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit() {

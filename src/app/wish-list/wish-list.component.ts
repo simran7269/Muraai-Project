@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, map, Observable, of } from 'rxjs';
+import { shopping } from '../model';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
 import { SampleserviceService } from '../sampleservice.service';
 
@@ -18,17 +19,25 @@ export class WishListComponent {
     'address',
     'edelivery',
     'dot',
-    // 'stars'
+  
   ];
   constructor(private service: SampleserviceService) { }
-  dataSource: Observable<any> = of([{}])
+  dataSource: Observable<shopping[]> = of([{
+    sno: '',
+    iname: '',
+    cost: '',
+    address: '',
+    edelivery: '',
+    id: '',
+    fav: false
+  }])
   
 
   ngOnInit(): void {
     this.service.getshopping()
-    this.dataSource = this.service.dataEvent$.pipe(map((n:any)=>{
+    this.dataSource = this.service.dataEvent$.pipe(map((transform:any)=>{
       
-      return(n.filter((a:any)=>a.fav))
+      return(transform.filter((selected:any)=>selected.fav))
     }))
 }
 
