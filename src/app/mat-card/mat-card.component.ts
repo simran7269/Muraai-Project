@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
-
+import{cards} from '../model';
 import { Observable, of } from 'rxjs';
-import { cards } from '../model';
+
 import { SampleserviceService } from '../sampleservice.service';
 
 @Component({
@@ -11,9 +11,9 @@ import { SampleserviceService } from '../sampleservice.service';
   templateUrl: './mat-card.component.html',
   styleUrls: ['./mat-card.component.css']
 })
-export class MatCardComponent implements OnInit {
-  cards: any
-
+export class MatCardComponent implements OnInit ,OnDestroy{
+  cards: Observable<cards[]> =of([]);
+  onDestroyed$= new Subject<boolean>()
 
 
 
@@ -24,13 +24,10 @@ export class MatCardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.serv.getclothing().pipe(takeUntil(this.destroyedData$)).subscribe((data)=>{
-    //   this.clothing=data
 
-    // })
 
    
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((path: any) => {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).pipe(takeUntil(this.onDestroyed$)).subscribe((path: any) => {
      
       if (path.url.includes('clothing')) {
 
@@ -47,7 +44,7 @@ export class MatCardComponent implements OnInit {
 
       }
       else {
-        this.router.navigate(['/goshopping'])
+        path.navigate(['/goshopping'])
       }
 
     })
@@ -55,7 +52,10 @@ export class MatCardComponent implements OnInit {
 
   }
 
-
+ngOnDestroy(): void {
+this.onDestroyed$.next(true)
+this.onDestroyed$.complete()
+}
 
 
 

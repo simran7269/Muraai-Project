@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
-import { cards, shopping } from './model';
+import { shopping ,cards} from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -51,9 +51,6 @@ export class SampleserviceService {
     return this.http.post('https://reqres.in/api/login', data)
   }
 
-  getProductDetails():Observable<cards[]> {
-    return this.http.get<cards[]>(this.productUrl)
-  }
   
   updateFavorites(data:any){
     const newData={
@@ -70,15 +67,15 @@ this.dataSubject$.next(
 )
   }
 
-  getclothing(){
-    return this.http.get(this.clothURL)
+  getclothing():Observable<cards[]>{
+    return this.http.get<cards[]>(this.clothURL)
   }
 
-  gethomeAppliance(){
-    return this.http.get(this.homeAUrl)
+  gethomeAppliance():Observable<cards[]>{
+    return this.http.get<cards[]>(this.homeAUrl)
   }
 
-  getelectronicAppliance(){
-    return this.http.get(this.elecAUrl)
+  getelectronicAppliance():Observable<cards[]>{
+    return this.http.get<cards[]>(this.elecAUrl)
   }
 }
