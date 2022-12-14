@@ -81,29 +81,7 @@ export class HeaderComponent implements OnInit,OnDestroy{
 
   // dataSource:Observable<any>= of([{}])
   
-  // ngOnInit():void{
-  //   this.dataSource =this.service.getshopping();
-  // }
-  
-  // // editRow(){
-  //   this.service.createOrder({
-      
-  //      id:15, 
-  //     iname:"Mug",
-  //     sno:4,
-  //     cost:40,
-  //     address:"Agra",
-  //     edelivery:"5 Dec",
-      
-    
-  //   },
-   
- 
-  //   ).subscribe((d: any) =>{
-  //     console.log('======' ,d)
-  //   })
-  
-  // }
+
 
   
 

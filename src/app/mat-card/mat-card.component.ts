@@ -11,8 +11,8 @@ import { SampleserviceService } from '../sampleservice.service';
 export class MatCardComponent implements OnInit {
   cards: any
 
-  
-  
+
+
 
   constructor(private serv: SampleserviceService, private router: Router) {
 
@@ -27,13 +27,11 @@ export class MatCardComponent implements OnInit {
     // })
 
     // this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(val => console.log('----val----', val))
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((path:any) => {
-      console.log('----',path)
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((path: any) => {
+     
       if (path.url.includes('clothing')) {
-         
-        this.cards = this.serv.getclothing()
 
-        this.cards.subscribe((val: any) => console.log('--val---', val))
+        this.cards = this.serv.getclothing()
 
       }
 
@@ -58,8 +56,6 @@ export class MatCardComponent implements OnInit {
 
 
 
-  // // ]
-  //   }
 
 
 }
