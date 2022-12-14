@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
-import { filter, Observable, of, Subject, takeUntil } from 'rxjs';
+import { filter, Subject, takeUntil } from 'rxjs';
+
+import { Observable, of } from 'rxjs';
+import { cards } from '../model';
 import { SampleserviceService } from '../sampleservice.service';
 
 @Component({
@@ -26,7 +29,7 @@ export class MatCardComponent implements OnInit {
 
     // })
 
-    // this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(val => console.log('----val----', val))
+   
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((path: any) => {
      
       if (path.url.includes('clothing')) {
