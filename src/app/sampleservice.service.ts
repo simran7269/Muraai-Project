@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
-import { cards, shopping } from './model';
+import { shopping ,cards} from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,10 @@ export class SampleserviceService {
   value: any;
  
   API_URL = 'http://localhost:3000/shopping';
-  productUrl = 'http://localhost:3000/clothing';
+  productUrl = 'http://localhost:3000/product';
+  homeAUrl='http://localhost:3000/homeAppliances';
+  elecAUrl='http://localhost:3000/electronicAppliances';
+  clothURL='http://localhost:3000/clothing';
 
   private dataSubject$: Subject<shopping[]>=new Subject();
   dataEvent$= this.dataSubject$.asObservable();
@@ -48,9 +51,6 @@ export class SampleserviceService {
     return this.http.post('https://reqres.in/api/login', data)
   }
 
-  getProductDetails():Observable<cards[]> {
-    return this.http.get<cards[]>(this.productUrl)
-  }
   
   updateFavorites(data:any){
     const newData={
@@ -65,5 +65,17 @@ export class SampleserviceService {
 this.dataSubject$.next(
   this. data.filter((val:any)=>val.iname.toLowerCase().includes(value.toLowerCase()))
 )
+  }
+
+  getclothing():Observable<cards[]>{
+    return this.http.get<cards[]>(this.clothURL)
+  }
+
+  gethomeAppliance():Observable<cards[]>{
+    return this.http.get<cards[]>(this.homeAUrl)
+  }
+
+  getelectronicAppliance():Observable<cards[]>{
+    return this.http.get<cards[]>(this.elecAUrl)
   }
 }

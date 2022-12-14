@@ -50,6 +50,7 @@ import { ButtonDirDirective } from './button-dir.directive';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { ButtonDirDirective } from './button-dir.directive';
     WishListComponent,
     HiglightDirective,
     ButtonDirDirective,
+   
   
    
     

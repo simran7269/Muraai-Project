@@ -40,7 +40,7 @@ export class CardComponent implements OnInit, OnDestroy {
     this.service.deleteOrder(id).pipe(takeUntil(this.destroyedValues$)).subscribe(() => {
 
 
-       this.router.navigate(["dashboard"]) ;
+      this.router.navigate(["dashboard"]) ;
 
     });
   }
